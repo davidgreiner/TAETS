@@ -1,0 +1,33 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/media-playback-pause-5.png</file>
+        <file>icons/media-playback-start-5.png</file>
+        <file>icons/media-playback-stop-5.png</file>
+        <file>icons/media-seek-backward-5.png</file>
+        <file>icons/media-seek-forward-5.png</file>
+        <file>icons/media-skip-backward-5.png</file>
+        <file>icons/media-skip-forward-5.png</file>
+        <file>icons/view-refresh-4.png</file>
+        <file>icons/view-list-text-3.png</file>
+        <file>icons/view-object-histogram-linear.png</file>
+        <file>icons/view-preview.png</file>
+        <file>icons/view-restore-2.png</file>
+        <file>icons/view-statistics.png</file>
+        <file>icons/document-decrypt-3.png</file>
+        <file>icons/document-encrypt-3.png</file>
+        <file>icons/histcolor-blue.png</file>
+        <file>icons/histcolor-green.png</file>
+        <file>icons/histcolor-luminance.png</file>
+        <file>icons/histcolor-red.png</file>
+        <file>icons/address-book-new-3.png</file>
+        <file>icons/document-new-6.png</file>
+        <file>icons/document-open-7.png</file>
+        <file>icons/document-save-5.png</file>
+        <file>icons/svn-update.png</file>
+        <file>icons/system-run-5.png</file>
+        <file>icons/view-media-equalizer.png</file>
+        <file>icons/system-search-5.png</file>
+        <file>icons/list-add-5.png</file>
+        <file>icons/list-remove-5.png</file>
+    </qresource>
+</RCC>

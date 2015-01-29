@@ -1,0 +1,5 @@
+22 serialization::archive 9 0 0 11 avconv h264 1 0 0 0 3 0 22 avconv -f rawvideo -s  1 x 51  -i - -f h264 - | avconv -f h264 -i - -f rawvideo - 0 0 2 0 3 18 taets::NumberParam 1 0
+0 1 0
+1 0 0 5 width 352 0 1920 1 1 0 0 3
+2
+3 6 height 288 0 1080 1 1

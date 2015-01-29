@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FrameAnalyzerWidget</class>
+ <widget class="QWidget" name="FrameAnalyzerWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>898</width>
+    <height>421</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Framepreview</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../res/icons.qrc">
+    <normaloff>:/icons/view-preview.png</normaloff>:/icons/view-preview.png</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="SourcesSelectionWidget" name="sourcesSelection"/>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="modesGroupBox">
+       <property name="title">
+        <string>Mode</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QRadioButton" name="modeNormalRadioButton">
+          <property name="text">
+           <string>Normal</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="modeDifferenceRadioButton">
+          <property name="text">
+           <string>Difference</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="modeOverlayRadioButton">
+          <property name="text">
+           <string>Fade</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="modeSlideRadioButton">
+          <property name="text">
+           <string>Scroll</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
+        <string>Settings</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QCheckBox" name="filterCheckBox">
+          <property name="text">
+           <string>Filter</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="fitButton">
+          <property name="text">
+           <string>Reset</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QFrame" name="pictureFrame">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="FrameAnalyzerPicturePreview" name="picturePreview" native="true"/>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="seekFirstButton">
+         <property name="icon">
+          <iconset resource="../res/icons.qrc">
+           <normaloff>:/icons/media-skip-backward-5.png</normaloff>:/icons/media-skip-backward-5.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="stepReverseButton">
+         <property name="icon">
+          <iconset resource="../res/icons.qrc">
+           <normaloff>:/icons/media-seek-backward-5.png</normaloff>:/icons/media-seek-backward-5.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="togglePlayButton">
+         <property name="icon">
+          <iconset resource="../res/icons.qrc">
+           <normaloff>:/icons/media-playback-start-5.png</normaloff>
+           <normalon>:/icons/media-playback-pause-5.png</normalon>:/icons/media-playback-start-5.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="stopButton">
+         <property name="icon">
+          <iconset resource="../res/icons.qrc">
+           <normaloff>:/icons/media-playback-stop-5.png</normaloff>:/icons/media-playback-stop-5.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="stepButton">
+         <property name="icon">
+          <iconset resource="../res/icons.qrc">
+           <normaloff>:/icons/media-seek-forward-5.png</normaloff>:/icons/media-seek-forward-5.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="seekLastButton">
+         <property name="icon">
+          <iconset resource="../res/icons.qrc">
+           <normaloff>:/icons/media-skip-forward-5.png</normaloff>:/icons/media-skip-forward-5.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="frameSpinBox"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="syncButton">
+         <property name="icon">
+          <iconset resource="../res/icons.qrc">
+           <normaloff>:/icons/document-decrypt-3.png</normaloff>
+           <normalon>:/icons/document-encrypt-3.png</normalon>:/icons/document-decrypt-3.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>24</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SourcesSelectionWidget</class>
+   <extends>QGroupBox</extends>
+   <header location="global">SourcesSelectionWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FrameAnalyzerPicturePreview</class>
+   <extends>QWidget</extends>
+   <header location="global">FrameAnalyzerPicturePreview.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../res/icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

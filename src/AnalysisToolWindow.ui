@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AnalysisToolWindow</class>
+ <widget class="QMainWindow" name="AnalysisToolWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TAETS - Analysis Tool</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QMdiArea" name="mdiArea">
+      <property name="contextMenuPolicy">
+       <enum>Qt::ActionsContextMenu</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QSlider" name="frameSlider">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="seekFirstButton">
+        <property name="icon">
+         <iconset resource="../res/icons.qrc">
+          <normaloff>:/icons/media-skip-backward-5.png</normaloff>:/icons/media-skip-backward-5.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>Down</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stepReverseButton">
+        <property name="icon">
+         <iconset resource="../res/icons.qrc">
+          <normaloff>:/icons/media-seek-backward-5.png</normaloff>:/icons/media-seek-backward-5.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>Left</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="togglePlayButton">
+        <property name="icon">
+         <iconset resource="../res/icons.qrc">
+          <normaloff>:/icons/media-playback-start-5.png</normaloff>
+          <normalon>:/icons/media-playback-pause-5.png</normalon>:/icons/media-playback-start-5.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>Space</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stopButton">
+        <property name="icon">
+         <iconset resource="../res/icons.qrc">
+          <normaloff>:/icons/media-playback-stop-5.png</normaloff>:/icons/media-playback-stop-5.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stepButton">
+        <property name="icon">
+         <iconset resource="../res/icons.qrc">
+          <normaloff>:/icons/media-seek-forward-5.png</normaloff>:/icons/media-seek-forward-5.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>Right</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="seekLastButton">
+        <property name="icon">
+         <iconset resource="../res/icons.qrc">
+          <normaloff>:/icons/media-skip-forward-5.png</normaloff>:/icons/media-skip-forward-5.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>Up</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="frameSpinBox"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="syncToMasterFrameButton">
+        <property name="icon">
+         <iconset resource="../res/icons.qrc">
+          <normaloff>:/icons/view-refresh-4.png</normaloff>:/icons/view-refresh-4.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>S</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="newFrameAnalyzerAction"/>
+   <addaction name="newHistogramAnalyzerAction"/>
+   <addaction name="newDiagramAnalyzerAction"/>
+   <addaction name="newTableAnalyzerAction"/>
+   <addaction name="separator"/>
+   <addaction name="setStandardLayoutAction"/>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuAnalyzer">
+    <property name="title">
+     <string>Analyzer</string>
+    </property>
+    <addaction name="newFrameAnalyzerAction"/>
+    <addaction name="newHistogramAnalyzerAction"/>
+    <addaction name="newDiagramAnalyzerAction"/>
+    <addaction name="newTableAnalyzerAction"/>
+    <addaction name="separator"/>
+    <addaction name="setStandardLayoutAction"/>
+   </widget>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="closeAction"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <widget class="QMenu" name="menuLanguage">
+     <property name="title">
+      <string>Language</string>
+     </property>
+     <addaction name="setLanguageEnglishAction"/>
+     <addaction name="setLanguageGermanAction"/>
+    </widget>
+    <addaction name="menuLanguage"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuAnalyzer"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <action name="newFrameAnalyzerAction">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/icons/view-preview.png</normaloff>:/icons/view-preview.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Framepreview</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+F</string>
+   </property>
+  </action>
+  <action name="newHistogramAnalyzerAction">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/icons/view-object-histogram-linear.png</normaloff>:/icons/view-object-histogram-linear.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Histogram</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+H</string>
+   </property>
+  </action>
+  <action name="newDiagramAnalyzerAction">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/icons/view-statistics.png</normaloff>:/icons/view-statistics.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Diagram</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+D</string>
+   </property>
+  </action>
+  <action name="newTableAnalyzerAction">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/icons/view-list-text-3.png</normaloff>:/icons/view-list-text-3.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Table</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+T</string>
+   </property>
+  </action>
+  <action name="setStandardLayoutAction">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/icons/view-restore-2.png</normaloff>:/icons/view-restore-2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Standardlayout</string>
+   </property>
+   <property name="toolTip">
+    <string>Standardlayout</string>
+   </property>
+  </action>
+  <action name="closeAction">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="setLanguageEnglishAction">
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="setLanguageGermanAction">
+   <property name="text">
+    <string>German</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../res/icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

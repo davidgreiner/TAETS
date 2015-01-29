@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>languages/taets_de.qm</file>
+        <file>languages/taets_en.qm</file>
+    </qresource>
+</RCC>

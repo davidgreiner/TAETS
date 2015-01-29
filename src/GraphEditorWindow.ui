@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GraphEditorWindow</class>
+ <widget class="QMainWindow" name="GraphEditorWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>940</width>
+    <height>625</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TAETS - Graph Editor</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="GraphCanvas" name="graphCanvas"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="verticalLayoutWidget">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Settings</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="0" column="0">
+            <widget class="NodeSettingsListWidget" name="nodeSettingsList" native="true"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>940</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuProjekt">
+    <property name="title">
+     <string>Project</string>
+    </property>
+    <addaction name="actionNew_Project"/>
+    <addaction name="actionOpen_Project"/>
+    <addaction name="actionSave_Project"/>
+    <addaction name="separator"/>
+    <addaction name="actionSetProjectLength"/>
+    <addaction name="actionSetComputationOutput"/>
+    <addaction name="actionCompute"/>
+    <addaction name="separator"/>
+    <addaction name="actionOpen_Inspector_Window"/>
+   </widget>
+   <widget class="QMenu" name="menuTemplates">
+    <property name="title">
+     <string>Templates</string>
+    </property>
+    <addaction name="actionOpenTemplateEditor"/>
+   </widget>
+   <widget class="QMenu" name="menuInfo">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <widget class="QMenu" name="menuLanguage">
+     <property name="title">
+      <string>Language</string>
+     </property>
+     <addaction name="actionSetLanguageEnglish"/>
+     <addaction name="actionSetLanguageGerman"/>
+    </widget>
+    <addaction name="menuLanguage"/>
+   </widget>
+   <addaction name="menuProjekt"/>
+   <addaction name="menuTemplates"/>
+   <addaction name="menuInfo"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew_Project"/>
+   <addaction name="actionOpen_Project"/>
+   <addaction name="actionSave_Project"/>
+   <addaction name="separator"/>
+   <addaction name="actionSetProjectLength"/>
+   <addaction name="actionSetComputationOutput"/>
+   <addaction name="actionCompute"/>
+   <addaction name="separator"/>
+   <addaction name="actionOpenTemplateEditor"/>
+   <addaction name="separator"/>
+   <addaction name="actionOpen_Inspector_Window"/>
+  </widget>
+  <action name="actionCompute">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/icons/system-run-5.png</normaloff>:/icons/system-run-5.png</iconset>
+   </property>
+   <property name="text">
+    <string>Compute</string>
+   </property>
+   <property name="toolTip">
+    <string>Render Graph and save Output for Analysis</string>
+   </property>
+  </action>
+  <action name="actionOpen_Inspector_Window">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/icons/system-search-5.png</normaloff>:/icons/system-search-5.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open Inspector Window...</string>
+   </property>
+  </action>
+  <action name="actionNew_Project">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/icons/document-new-6.png</normaloff>:/icons/document-new-6.png</iconset>
+   </property>
+   <property name="text">
+    <string>New Project</string>
+   </property>
+  </action>
+  <action name="actionOpen_Project">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/icons/document-open-7.png</normaloff>:/icons/document-open-7.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open Project</string>
+   </property>
+  </action>
+  <action name="actionSave_Project">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/icons/document-save-5.png</normaloff>:/icons/document-save-5.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Project</string>
+   </property>
+  </action>
+  <action name="actionSetProjectLength">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/icons/view-media-equalizer.png</normaloff>:/icons/view-media-equalizer.png</iconset>
+   </property>
+   <property name="text">
+    <string>Set Length...</string>
+   </property>
+  </action>
+  <action name="actionSetComputationOutput">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/icons/svn-update.png</normaloff>:/icons/svn-update.png</iconset>
+   </property>
+   <property name="text">
+    <string>Set Computation Output...</string>
+   </property>
+  </action>
+  <action name="actionOpenTemplateEditor">
+   <property name="icon">
+    <iconset resource="../res/icons.qrc">
+     <normaloff>:/icons/address-book-new-3.png</normaloff>:/icons/address-book-new-3.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open Template Editor...</string>
+   </property>
+  </action>
+  <action name="actionSetLanguageEnglish">
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="actionSetLanguageGerman">
+   <property name="text">
+    <string>German</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>GraphCanvas</class>
+   <extends>QGraphicsView</extends>
+   <header location="global">GraphCanvas.h</header>
+  </customwidget>
+  <customwidget>
+   <class>NodeSettingsListWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">NodeSettingsListWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../res/icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>
